@@ -13,7 +13,7 @@ $ roslaunch turtlebot3_slam turtle_mowito_mapping.launch
 $ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch  
 
 
-2) For navigation with known map
+2) For navigation with known map(close all previous terminals)
 
 $export TURTLEBOT3_MODEL=waffle_pi 
 
@@ -23,7 +23,7 @@ $ export TURTLEBOT3_MODEL=waffle_pi
 
 $ roslaunch turtlebot3_slam turtle_mowito_nav_map.launch
 
-3) For exploration(not working corrctly now)
+3) For exploration(not working corrctly now)(close all previous terminals)
 
 $ export TURTLEBOT3_MODEL=waffle_pi 
 
