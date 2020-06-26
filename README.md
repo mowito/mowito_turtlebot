@@ -1,7 +1,8 @@
 # turtle_mowito
 
 for mapping
-mapping  export TURTLEBOT3_MODEL=waffle_pi 
+
+export TURTLEBOT3_MODEL=waffle_pi 
 
 roslaunch turtlebot3_gazebo turtlebot3_world.launch 
 
@@ -20,5 +21,18 @@ roslaunch turtlebot3_gazebo turtlebot3_world.launch
 
 export TURTLEBOT3_MODEL=waffle_pi 
 
-roslaunch turtlebot3_slam turtle_mowito_nav_map.launch 
+roslaunch turtlebot3_slam turtle_mowito_nav_map.launch
+
+for exploration(not working corrctly now)
+
+export TURTLEBOT3_MODEL=waffle_pi 
+
+roslaunch turtlebot3_gazebo turtlebot3_world.launch 
+
+export TURTLEBOT3_MODEL=waffle_pi 
+
+roslaunch turtlebot3_slam turtle_mowito_exploration.launch 
+
+
+
 
