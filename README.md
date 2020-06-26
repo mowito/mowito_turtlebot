@@ -1,37 +1,37 @@
 # turtle_mowito
 
-for mapping
+1) For mapping (don't forget to source the files)
 
-export TURTLEBOT3_MODEL=waffle_pi 
+$ export TURTLEBOT3_MODEL=waffle_pi 
 
-roslaunch turtlebot3_gazebo turtlebot3_world.launch 
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch 
 
-export TURTLEBOT3_MODEL=waffle_pi 
+$ export TURTLEBOT3_MODEL=waffle_pi 
 
-roslaunch turtlebot3_slam turtle_mowito_mapping.launch 
+$ roslaunch turtlebot3_slam turtle_mowito_mapping.launch 
 
-roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch  
+$ roslaunch turtlebot3_teleop turtlebot3_teleop_key.launch  
 
 
-for navigation with known map
+2) For navigation with known map(close all previous terminals)
 
-export TURTLEBOT3_MODEL=waffle_pi 
+$export TURTLEBOT3_MODEL=waffle_pi 
 
-roslaunch turtlebot3_gazebo turtlebot3_world.launch 
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch 
 
-export TURTLEBOT3_MODEL=waffle_pi 
+$ export TURTLEBOT3_MODEL=waffle_pi 
 
-roslaunch turtlebot3_slam turtle_mowito_nav_map.launch
+$ roslaunch turtlebot3_slam turtle_mowito_nav_map.launch
 
-for exploration(not working corrctly now)
+3) For exploration(not working corrctly now)(close all previous terminals)
 
-export TURTLEBOT3_MODEL=waffle_pi 
+$ export TURTLEBOT3_MODEL=waffle_pi 
 
-roslaunch turtlebot3_gazebo turtlebot3_world.launch 
+$ roslaunch turtlebot3_gazebo turtlebot3_world.launch 
 
-export TURTLEBOT3_MODEL=waffle_pi 
+$ export TURTLEBOT3_MODEL=waffle_pi 
 
-roslaunch turtlebot3_slam turtle_mowito_exploration.launch 
+$ roslaunch turtlebot3_slam turtle_mowito_exploration.launch 
 
 
 
