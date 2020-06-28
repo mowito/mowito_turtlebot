@@ -1,10 +1,10 @@
 <launch>
   <!-- Arguments -->
-      <arg name="map_path" default="$(find mw_mapping)/maps/mowito_map.yaml"/>
-    <arg name="respawn" default="true"/>
-    <arg name="debug" default="false"/>
-    <arg name="world_name" default="mowito"/>
-    <arg name="gui" default="true"/>
+  <arg name="map_path" default="$(find mw_mapping)/maps/mowito_map.yaml"/>
+  <arg name="respawn" default="true"/>
+  <arg name="debug" default="false"/>
+  <arg name="world_name" default="mowito"/>
+  <arg name="gui" default="true"/>
   <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
   <arg name="map_file" default="$(find mowito_files)/maps/map.yaml"/>
   <arg name="open_rviz" default="true"/>
@@ -19,21 +19,22 @@
   <!--node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/-->
 
   <!-- AMCL -->
-  <include file="$(env HOME)/mowito/launch/start_mwpfl.launch">
+  <include file="$(find mowito_files)/launch/secondary_launch/start_mwpfl.launch">
         <arg name="map_address" value="$(arg map_file)"/>
         <arg name="robot_init_x" value="0"/>
         <arg name="robot_init_y" value="0"/>
         <arg name="robot_init_phi" value="0"/>
         <arg name="sim" value="true"/>
   </include>
-      <node pkg="utils" type="msg_to_tf" name="msg_to_tf">
+  <!--
+  <node pkg="utils" type="msg_to_tf" name="msg_to_tf">
         <param name="odometry_topic" value="/odom"/>
-    </node>
-
+  </node>
+  -->
 
   <!-- move_base -->
-    <include file="$(env HOME)/mowito/launch/start_nav_server.launch">
-        <arg name="mission_executive_config" value="$(env HOME)/mowito/config/mission_executive_config/mission_executive_params.yaml"/>
+    <include file="$(find mowito_files)/launch/secondary_launch/start_nav_server.launch">
+        <arg name="mission_executive_config" value="$(find mowito_files)/config/mission_executive_config/mission_executive_params.yaml"/>
         <arg name="respawn" value="$(arg respawn)"/>
         <arg name="gp_debug" value="$(arg debug)"/>
         <arg name="ctrl_debug" value="$(arg debug)"/>  

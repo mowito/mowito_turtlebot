@@ -27,12 +27,12 @@
         <arg name="gui" value="$(arg gui)"/>
     </include-->
     <include file="$(find turtlebot3_bringup)/launch/turtlebot3_remote.launch">
-    <arg name="model" value="$(arg model)" />
-  </include>
+        <arg name="model" value="$(arg model)" />
+    </include>
    
     <!-- NAVIGATION -->
     <!-- mapping node-->
-    <include file="$(env HOME)/mowito/launch/start_mw_mapping.launch">
+    <include file="$(find mowito_files)/launch/secondary_launch/start_mw_mapping.launch">
         <arg name="scan_topic" value="/scan" /> 
         <arg name="laser_frame" value="laser" />
         <arg name="odom_frame" value="odom" />
@@ -46,8 +46,8 @@
     </node>
     
     <!-- nav server-->
-    <include file="$(env HOME)/mowito/launch/start_nav_server.launch">
-        <arg name="mission_executive_config" value="$(env HOME)/mowito/config/mission_executive_config/standard_nav.yaml"/>
+    <include file="$(find mowito_files)/launch/secondary_launch/start_nav_server.launch">
+        <arg name="mission_executive_config" value="$(find mowito_files)/config/mission_executive_config/standard_nav.yaml"/>
         <arg name="respawn" value="$(arg respawn)"/>
         <arg name="gp_debug" value="$(arg debug)"/>
         <arg name="ctrl_debug" value="$(arg debug)"/>
