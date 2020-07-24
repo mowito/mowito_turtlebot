@@ -12,4 +12,4 @@ pure_pursuit_controller:
   max_path_deviation: 1.0
   max_theta_deviation: 0.5
   transform_tolerance: 0.5
-  holonomic_robot: true
+  holonomic_robot: false

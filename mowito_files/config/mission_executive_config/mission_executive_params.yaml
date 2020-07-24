@@ -3,8 +3,8 @@ robot_frame: base_link
 loop_frequency: 20.0
 max_time_lag: 0.5
 decay: 0.9
-planner: "NavfnPlanner"
-controller: "trajectory_planner"
+planner: "genroute"
+controller: "pure_pursuit_planner"
 plan_topic: "/plan"
 cmd_vel_topic: "/cmd_vel"
 route_topic: "/route"

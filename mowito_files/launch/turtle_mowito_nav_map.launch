@@ -20,8 +20,8 @@
   <!-- NAVIGATION -->
   <include file="$(find mowito_files)/launch/secondary_launch/start_mwpfl.launch">
         <arg name="map_address" value="$(arg map_file)"/>
-        <arg name="robot_init_x" value="0"/>
-        <arg name="robot_init_y" value="0"/>
+        <arg name="robot_init_x" value="-1.85303472591"/>
+        <arg name="robot_init_y" value="-0.614965263423"/>
         <arg name="robot_init_phi" value="0"/>
         <arg name="sim" value="true"/>
   </include>
