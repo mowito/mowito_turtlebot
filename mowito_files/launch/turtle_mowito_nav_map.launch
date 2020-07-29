@@ -6,6 +6,8 @@
   <arg name="world_name" default="mowito"/>
   <arg name="gui" default="true"/>
   <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+  <arg name="cartographer" default="false" />
+  <arg name="carto_map" default="$(find mowito_files)/maps/carto_turtle.pbstream" />
 
   <arg name="map_file" default="$(find mowito_files)/maps/map.yaml"/>
   <arg name="open_rviz" default="true"/>
@@ -18,6 +20,7 @@
 
 
   <!-- NAVIGATION -->
+  <group unless="$(arg cartographer)">
   <include file="$(find mowito_files)/launch/secondary_launch/start_mwpfl.launch">
         <arg name="map_address" value="$(arg map_file)"/>
         <arg name="robot_init_x" value="-1.85303472591"/>
@@ -25,6 +28,18 @@
         <arg name="robot_init_phi" value="0"/>
         <arg name="sim" value="true"/>
   </include>
+  </group>
+  <group if="$(arg cartographer)">
+  <node name="cartographer_node" pkg="cartographer_ros"
+      type="cartographer_node" args="
+          -configuration_directory $(find mowito_files)/config/carto_config	
+          -configuration_basename turtlebot_localization.lua 
+          -load_state_filename $(arg carto_map)"
+      output="screen">
+    </node>
+    <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"
+      type="cartographer_occupancy_grid_node" args="-resolution 0.05" />
+    </group>  
 
   <!-- mowito nav server -->
     <include file="$(find mowito_files)/launch/secondary_launch/start_nav_server.launch">

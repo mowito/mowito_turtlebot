@@ -43,9 +43,14 @@
           -configuration_directory $(find mowito_files)/config/carto_config
           -configuration_basename turtlebot.lua"
       output="screen">
+	<remap from="/imu" to="/flat_imu"/>
     </node>  
     <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"
       type="cartographer_occupancy_grid_node" args="-resolution 0.05" />
+    <node pkg="turtlebot3_slam" type="flat_world_imu_node" name="flat_world_imu_node" output="screen">
+    	<remap from="imu_in" to="/imu" />
+    	<remap from="imu_out" to="/flat_imu" />
+    </node>
     </group>
 
     <!-- nav server-->
