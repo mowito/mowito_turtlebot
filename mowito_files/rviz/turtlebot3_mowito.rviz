@@ -408,6 +408,22 @@ Visualization Manager:
       Topic: /controller_executive/pure_pursuit_controller_execution/current_goal
       Unreliable: false
       Value: true
+    - Class: Submaps
+      Enabled: true
+      Fade-out distance: 1
+      High Resolution: true
+      Low Resolution: false
+      Name: Submaps
+      Submap query service: /submap_query
+      Submaps:
+        All: true
+        Trajectory 0:
+          0.3: true
+          Value: true
+      Topic: /submap_list
+      Tracking frame: base_link
+      Unreliable: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
