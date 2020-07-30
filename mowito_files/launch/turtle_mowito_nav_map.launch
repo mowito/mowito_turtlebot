@@ -6,6 +6,10 @@
   <arg name="world_name" default="mowito"/>
   <arg name="gui" default="true"/>
   <arg name="model" default="$(env TURTLEBOT3_MODEL)" doc="model type [burger, waffle, waffle_pi]"/>
+
+  <arg name="scan_topic" default="/scan"/>
+  <arg name="laser_frame" default="/base_scan" />
+  
   <arg name="cartographer" default="false" />
   <arg name="carto_map" default="$(find mowito_files)/maps/carto_turtle.pbstream" />
 
