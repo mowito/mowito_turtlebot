@@ -80,25 +80,7 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        camera_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        camera_rgb_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        camera_rgb_optical_frame:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        caster_back_left_link:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        caster_back_right_link:
+        caster_back_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -134,16 +116,8 @@ Visualization Manager:
           Value: true
         base_scan:
           Value: false
-        camera_link:
-          Value: false
-        camera_rgb_frame:
-          Value: false
-        camera_rgb_optical_frame:
-          Value: false
-        caster_back_left_link:
-          Value: false
-        caster_back_right_link:
-          Value: false
+        caster_back_link:
+          Value: true
         imu_link:
           Value: false
         map:
@@ -166,13 +140,7 @@ Visualization Manager:
               base_link:
                 base_scan:
                   {}
-                camera_link:
-                  camera_rgb_frame:
-                    camera_rgb_optical_frame:
-                      {}
-                caster_back_left_link:
-                  {}
-                caster_back_right_link:
+                caster_back_link:
                   {}
                 imu_link:
                   {}
@@ -422,6 +390,16 @@ Visualization Manager:
           Value: true
       Topic: /submap_list
       Tracking frame: base_link
+      Unreliable: false
+      Value: true
+    - Alpha: 1
+      Class: rviz/PointStamped
+      Color: 204; 41; 204
+      Enabled: true
+      History Length: 1
+      Name: PointStamped
+      Radius: 0.20000000298023224
+      Topic: /lookahead_goal
       Unreliable: false
       Value: true
   Enabled: true
