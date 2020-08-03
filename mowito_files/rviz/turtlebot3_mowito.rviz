@@ -80,7 +80,25 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
-        caster_back_link:
+        camera_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        camera_rgb_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        camera_rgb_optical_frame:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        caster_back_left_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        caster_back_right_link:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -116,7 +134,15 @@ Visualization Manager:
           Value: true
         base_scan:
           Value: false
-        caster_back_link:
+        camera_link:
+          Value: true
+        camera_rgb_frame:
+          Value: true
+        camera_rgb_optical_frame:
+          Value: true
+        caster_back_left_link:
+          Value: true
+        caster_back_right_link:
           Value: true
         imu_link:
           Value: false
@@ -140,7 +166,13 @@ Visualization Manager:
               base_link:
                 base_scan:
                   {}
-                caster_back_link:
+                camera_link:
+                  camera_rgb_frame:
+                    camera_rgb_optical_frame:
+                      {}
+                caster_back_left_link:
+                  {}
+                caster_back_right_link:
                   {}
                 imu_link:
                   {}
@@ -374,22 +406,6 @@ Visualization Manager:
       Shaft Radius: 0.05000000074505806
       Shape: Arrow
       Topic: /controller_executive/pure_pursuit_controller_execution/current_goal
-      Unreliable: false
-      Value: true
-    - Class: Submaps
-      Enabled: true
-      Fade-out distance: 1
-      High Resolution: true
-      Low Resolution: false
-      Name: Submaps
-      Submap query service: /submap_query
-      Submaps:
-        All: true
-        Trajectory 0:
-          0.3: true
-          Value: true
-      Topic: /submap_list
-      Tracking frame: base_link
       Unreliable: false
       Value: true
     - Alpha: 1
