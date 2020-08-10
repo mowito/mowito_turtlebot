@@ -45,7 +45,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/mowito_files.cpp
+#   src/${PROJECT_NAME}/mowito_turtlebot.cpp
 # )
 
 ## Add cmake target dependencies of the library
@@ -56,7 +56,7 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-# add_executable(${PROJECT_NAME}_node src/mowito_files_node.cpp)
+# add_executable(${PROJECT_NAME}_node src/mowito_turtlebot_node.cpp)
 # executive_node
 add_executable(set_route_client src/set_route_client_node.cpp)
 target_link_libraries(set_route_client ${${PROJECT_NAME}_LIBRARIES} yaml-cpp ${catkin_LIBRARIES})
