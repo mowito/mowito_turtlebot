@@ -28,7 +28,7 @@
     <!-- NAVIGATION -->
     <!-- mapping node-->
     <group unless="$(arg cartographer)">
-    <include file="$(find mowito_files)/launch/secondary_launch/start_mw_mapping.launch">
+    <include file="$(find mowito_turtlebot)/launch/secondary_launch/start_mw_mapping.launch">
         <arg name="scan_topic" value="$(arg scan_topic)" /> 
         <arg name="laser_frame" value="$(arg laser_frame)" />
         <arg name="odom_frame" value="$(arg odom_frame)" />
@@ -40,7 +40,7 @@
     <group if="$(arg cartographer)">
     <node name="cartographer_node" pkg="cartographer_ros"
       type="cartographer_node" args="
-          -configuration_directory $(find mowito_files)/config/carto_config
+          -configuration_directory $(find mowito_turtlebot)/config/carto_config
           -configuration_basename turtlebot.lua"
       output="screen">
 	<remap from="/imu" to="/flat_imu"/>
@@ -54,8 +54,8 @@
     </group>
 
     <!-- nav server-->
-    <include file="$(find mowito_files)/launch/secondary_launch/start_nav_server.launch">
-        <arg name="mission_executive_config" value="$(find mowito_files)/config/mission_executive_config/mission_executive_params.yaml"/>
+    <include file="$(find mowito_turtlebot)/launch/secondary_launch/start_nav_server.launch">
+        <arg name="mission_executive_config" value="$(find mowito_turtlebot)/config/mission_executive_config/mission_executive_params.yaml"/>
         <arg name="respawn" value="$(arg respawn)"/>
         <arg name="gp_debug" value="$(arg debug)"/>
         <arg name="ctrl_debug" value="$(arg debug)"/>  
@@ -64,7 +64,7 @@
     
     <group if="$(arg open_rviz)"> 
     <node pkg="rviz" type="rviz" name="rviz" required="true"
-          args="-d $(find mowito_files)/rviz/turtlebot3_mowito.rviz"/>
+          args="-d $(find mowito_turtlebot)/rviz/turtlebot3_mowito.rviz"/>
   </group>
 
 </launch>

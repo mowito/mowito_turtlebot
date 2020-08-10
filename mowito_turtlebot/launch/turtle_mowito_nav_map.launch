@@ -11,9 +11,9 @@
   <arg name="laser_frame" default="/base_scan" />
   
   <arg name="cartographer" default="false" />
-  <arg name="carto_map" default="$(find mowito_files)/maps/carto_turtle.pbstream" />
+  <arg name="carto_map" default="$(find mowito_turtlebot)/maps/carto_turtle.pbstream" />
 
-  <arg name="map_file" default="$(find mowito_files)/maps/map.yaml"/>
+  <arg name="map_file" default="$(find mowito_turtlebot)/maps/map.yaml"/>
   <arg name="open_rviz" default="true"/>
   <arg name="move_forward_only" default="false"/>
 
@@ -25,7 +25,7 @@
 
   <!-- NAVIGATION -->
   <group unless="$(arg cartographer)">
-  <include file="$(find mowito_files)/launch/secondary_launch/start_mwpfl.launch">
+  <include file="$(find mowito_turtlebot)/launch/secondary_launch/start_mwpfl.launch">
         <arg name="map_address" value="$(arg map_file)"/>
         <arg name="robot_init_x" value="-1.85303472591"/>
         <arg name="robot_init_y" value="-0.614965263423"/>
@@ -38,7 +38,7 @@
   <group if="$(arg cartographer)">
   <node name="cartographer_node" pkg="cartographer_ros"
       type="cartographer_node" args="
-          -configuration_directory $(find mowito_files)/config/carto_config	
+          -configuration_directory $(find mowito_turtlebot)/config/carto_config	
           -configuration_basename turtlebot_localization.lua 
           -load_state_filename $(arg carto_map)"
       output="screen">
@@ -53,18 +53,18 @@
     </group>  
 
   <!-- mowito nav server -->
-    <include file="$(find mowito_files)/launch/secondary_launch/start_nav_server.launch">
-        <arg name="mission_executive_config" value="$(find mowito_files)/config/mission_executive_config/mission_executive_params.yaml"/>
+    <include file="$(find mowito_turtlebot)/launch/secondary_launch/start_nav_server.launch">
+        <arg name="mission_executive_config" value="$(find mowito_turtlebot)/config/mission_executive_config/mission_executive_params.yaml"/>
         <arg name="respawn" value="$(arg respawn)"/>
         <arg name="gp_debug" value="$(arg debug)"/>
-        <!-- <arg name="ctrl_debug" value="$(arg debug)"/>   -->
-        <arg name="ctrl_debug" value="true"/>  
+        <arg name="ctrl_debug" value="$(arg debug)"/>  
+        <!-- <arg name="ctrl_debug" value="true"/>   -->
         <arg name="rcvr_debug" value="$(arg debug)"/>        
     </include>
 
   <!-- rviz -->
   <group if="$(arg open_rviz)"> 
     <node pkg="rviz" type="rviz" name="rviz" required="true"
-          args="-d $(find mowito_files)/rviz/turtlebot3_mowito.rviz"/>
+          args="-d $(find mowito_turtlebot)/rviz/turtlebot3_mowito.rviz"/>
   </group>
 </launch>

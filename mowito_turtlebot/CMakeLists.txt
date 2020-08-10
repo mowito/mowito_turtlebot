@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(mowito_files)
+project(mowito_turtlebot)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -100,7 +100,7 @@ find_package(catkin REQUIRED)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES mowito_files
+#  LIBRARIES mowito_turtlebot
 #  CATKIN_DEPENDS other_catkin_pkg
 #  DEPENDS system_lib
 )
@@ -118,7 +118,7 @@ include_directories(
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/mowito_files.cpp
+#   src/${PROJECT_NAME}/mowito_turtlebot.cpp
 # )
 
 ## Add cmake target dependencies of the library
