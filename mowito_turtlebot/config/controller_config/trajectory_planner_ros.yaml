@@ -1,7 +1,10 @@
 trajectory_planner:
+  # goal tolerances
   yaw_goal_tolerance: 0.15
   xy_goal_tolerance: 0.1
+  latch_xy_goal_tolerance: false
 
+  # Robot Configuration Parameters
   acc_lim_x: 0.5
   acc_lim_y: 0.5
   acc_lim_theta: 3.2
@@ -13,11 +16,25 @@ trajectory_planner:
   min_vel_theta: -0.5
   min_in_place_vel_theta: 0.4
 
+  # Forward Simulation Parameters
   sim_time: 1.7
   sim_granularity: 0.025
   angular_sim_granularity: 0.025
+  heading_lookahead: 0.325
+  vx_samples: 20
+  vtheta_samples: 20
+  controller_frequency: 10.0
 
-  pdist_scale: 0.6
+  # Robot Footprint
+  # set for turtlebot3 waffle pi ( the other turtle bots are smaller)
+  footprint_model: # types: "point", "circular", "two_circles", "line", "polygon"
+    type: "polygon"
+    radius: 0.2 # for type "circular"
+    vertices: [[-0.30, -0.30], [-0.30, 0.30], [0.30, 0.30], [0.30, -0.30]] # for type "polygon"
+    padding: 0.01
+
+  # Cost Weights
+  pdist_scale: 0.6 # higher weight make the stick to global path
   gdist_scale: 0.8
   occdist_scale: 0.01
 
@@ -25,11 +42,8 @@ trajectory_planner:
   escape_reset_dist: 0.10
   escape_reset_theta: 1.57079632679
 
-  vx_samples: 20
-  vtheta_samples: 20
 
-  heading_lookahead: 0.325
-
+  # Differential-drive robot configuration
   holonomic_robot: true
 
   escape_vel: -0.1
