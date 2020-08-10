@@ -6,8 +6,8 @@ trajectory_planner:
 
   # Robot Configuration Parameters
   acc_lim_x: 0.5
-  acc_lim_y: 0.5
-  acc_lim_theta: 3.2
+  acc_lim_y: 0.0
+  acc_lim_theta: 0.6
 
   max_vel_x: 0.25
   min_vel_x: -0.25
@@ -17,12 +17,12 @@ trajectory_planner:
   min_in_place_vel_theta: 0.4
 
   # Forward Simulation Parameters
-  sim_time: 1.7
+  sim_time: 1.0
+  vx_samples: 20
+  vtheta_samples: 30
   sim_granularity: 0.025
   angular_sim_granularity: 0.025
   heading_lookahead: 0.325
-  vx_samples: 20
-  vtheta_samples: 20
   controller_frequency: 10.0
 
   # Robot Footprint
@@ -34,9 +34,9 @@ trajectory_planner:
     padding: 0.01
 
   # Cost Weights
-  pdist_scale: 0.6 # higher weight make the stick to global path
-  gdist_scale: 0.8
-  occdist_scale: 0.01
+  pdist_scale: 4 # higher weight make the stick to global path
+  gdist_scale: 1
+  occdist_scale: 0.2
 
   oscillation_reset_dist: 0.05
   escape_reset_dist: 0.10
@@ -44,7 +44,7 @@ trajectory_planner:
 
 
   # Differential-drive robot configuration
-  holonomic_robot: true
+  holonomic_robot: false
 
   escape_vel: -0.1
 
