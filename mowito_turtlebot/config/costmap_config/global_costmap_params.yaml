@@ -1,17 +1,20 @@
 global_costmap:
   global_frame: map
-  update_frequency: 2.5
-  publish_frequency: 2.5
+  update_frequency: 2.0
+  publish_frequency: 2.0
   transform_tolerance: 0.5
-  width: 20
-  height: 20
+  
+  width: 8
+  height: 8
   origin_x: -7.5
   origin_y: -7.5
   static_map: false
   rolling_window: true
-  inflation_radius: 0.40
   resolution: 0.025
   plugins:
             - {name: static,                  type: "costmap_2d::StaticLayer"}
             - {name: obstacle_layer,         type: "costmap_2d::VoxelLayer"}
-            - {name: inflation,               type: "costmap_2d::InflationLayer"}
+            - {name: inflation_layer,               type: "costmap_2d::InflationLayer"}
+  inflation_layer:
+    cost_scaling_factor: 3.0
+    inflation_radius: 0.35

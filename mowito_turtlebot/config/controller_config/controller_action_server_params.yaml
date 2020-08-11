@@ -1,7 +1,9 @@
 controllers:
   - {name: trajectory_planner, type: "trajectory_planner/TrajectoryPlannerROS"}
   - {name: pure_pursuit_controller, type: "controller/PurePursuitController"}
+  - {name: teb_local_planner, type: "teb_local_planner/TebLocalPlannerROS"}
 
 controller_executions:
   - {name: trajectory_planner_execution, type: "trajectory_planner/TrajectoryPlannerROSExecution"}
   - {name: pure_pursuit_controller_execution, type: "controller/PurePursuitControllerExecution"}
+  - {name: teb_local_planner_execution, type: "teb_local_planner/TebLocalPlannerROSExecution"}

@@ -35,14 +35,15 @@
         <arg name="sim" value="true"/>
   </include>
   </group>
+
   <group if="$(arg cartographer)">
-  <node name="cartographer_node" pkg="cartographer_ros"
-      type="cartographer_node" args="
-          -configuration_directory $(find mowito_turtlebot)/config/carto_config	
-          -configuration_basename turtlebot_localization.lua 
-          -load_state_filename $(arg carto_map)"
-      output="screen">
-	<remap from="/imu" to="/flat_imu"/>
+    <node name="cartographer_node" pkg="cartographer_ros"
+        type="cartographer_node" args="
+            -configuration_directory $(find mowito_turtlebot)/config/carto_config	
+            -configuration_basename turtlebot_localization.lua 
+            -load_state_filename $(arg carto_map)"
+        output="screen">
+	    <remap from="/imu" to="/flat_imu"/>
     </node>
     <node name="cartographer_occupancy_grid_node" pkg="cartographer_ros"
       type="cartographer_occupancy_grid_node" args="-resolution 0.05" />
@@ -50,17 +51,17 @@
     	<remap from="imu_in" to="/imu" />
     	<remap from="imu_out" to="/flat_imu" />
     </node>
-    </group>  
+  </group>  
 
   <!-- mowito nav server -->
-    <include file="$(find mowito_turtlebot)/launch/secondary_launch/start_nav_server.launch">
-        <arg name="mission_executive_config" value="$(find mowito_turtlebot)/config/mission_executive_config/mission_executive_params.yaml"/>
-        <arg name="respawn" value="$(arg respawn)"/>
-        <arg name="gp_debug" value="$(arg debug)"/>
-        <arg name="ctrl_debug" value="$(arg debug)"/>  
-        <!-- <arg name="ctrl_debug" value="true"/>   -->
-        <arg name="rcvr_debug" value="$(arg debug)"/>        
-    </include>
+  <include file="$(find mowito_turtlebot)/launch/secondary_launch/start_nav_server.launch">
+      <arg name="mission_executive_config" value="$(find mowito_turtlebot)/config/mission_executive_config/mission_executive_params.yaml"/>
+      <arg name="respawn" value="$(arg respawn)"/>
+      <arg name="gp_debug" value="$(arg debug)"/>
+      <arg name="ctrl_debug" value="$(arg debug)"/>  
+      <!-- <arg name="ctrl_debug" value="true"/>   -->
+      <arg name="rcvr_debug" value="$(arg debug)"/>        
+  </include>
 
   <!-- rviz -->
   <group if="$(arg open_rviz)"> 
