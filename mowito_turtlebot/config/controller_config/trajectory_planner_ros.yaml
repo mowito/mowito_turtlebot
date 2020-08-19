@@ -20,11 +20,11 @@ trajectory_planner:
   holonomic_robot: false
 
 # Forward Simulation Parameters
-  sim_time: 1.0
-  vx_samples: 20
+  sim_time: 2.0
+  vx_samples: 10
   vtheta_samples: 30
-  sim_granularity: 0.025
-  angular_sim_granularity: 0.025
+  sim_granularity: 0.03
+  angular_sim_granularity: 0.03
   heading_lookahead: 0.325
 
 # Robot Footprint
@@ -35,7 +35,7 @@ trajectory_planner:
     padding: 0.01
 
 # Cost Weights
-  pdist_scale: 1 # higher weight make the stick to global path
+  pdist_scale: 1.5 # higher weight make the stick to global path
   gdist_scale: 1
   occdist_scale: 0.2
 
@@ -49,10 +49,6 @@ trajectory_planner:
   heading_scoring_timestep: 1.0
 
   simple_attractor: false
-
-  y_vels: [-0.3, -0.1, 0.1, 0.3]
-
-
 
 
 
