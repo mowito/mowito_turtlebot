@@ -1,9 +1,7 @@
 planners:
   - {name: NavfnPlanner, type: "navfn_planner/NavfnPlanner"}
-  - {name: genroute, type: "global_planner/SimplePlanner"}
-  # - {name: SBPL, type: "SBPLLatticePlanner"}
+  - {name: genroute, type: "mw_global_planner/SimplePlanner"}
 
 planner_executions:
   - {name: NavfnPlanner_execution, type: "navfn_planner/NavfnPlannerExecution"}
-  - {name: genroute_execution, type: "global_planner/SimplePlannerExecution"}
-  # - {name: SBPL_execution, type: "SBPLLatticePlannerExecution"}
+  - {name: genroute_execution, type: "mw_global_planner/SimplePlannerExecution"}
