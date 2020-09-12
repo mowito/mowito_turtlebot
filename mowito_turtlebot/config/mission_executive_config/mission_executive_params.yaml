@@ -4,7 +4,7 @@ loop_frequency: 20.0
 max_time_lag: 0.5
 decay: 0.9
 planner: "NavfnPlanner" # "NavfnPlanner" "genroute"
-controller: "trajectory_planner" # "trajectory_planner" "teb_local_planner" "pure_pursuit_controller"
+controller: "trajectory_planner" # "trajectory_planner" "mw_maxl_planner" "teb_local_planner" "pure_pursuit_controller"
 plan_topic: "/plan"
 cmd_vel_topic: "/cmd_vel"
 route_topic: "/route"

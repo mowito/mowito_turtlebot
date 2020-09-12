@@ -1,0 +1,33 @@
+mw_maxl_planner:
+  use_laser: true
+  odomTopic: "/odom"
+  plot_path: true
+
+  pathFolder: $(find mw_maxl_planner)/paths
+  autonomyMode: true
+  map_frame: "map"
+  robot_frame: "base_link"
+  velodyne_frame: "velodyne"
+  laser_frame: "base_laser"
+
+  lookahead_goal_on_path: true
+  min_lookahead: 1.5
+  max_lookahead: 3
+  closest_point_index_search: 10
+  max_y_deviation: 1.0
+  min_radius: 0.1
+  max_radius: 1.0
+  max_omega_radius: 1.0
+  max_path_dev: 1.0
+  lookahead_point_distance: 0.1 
+
+  vehicleLength: 0.990
+  vehicleWidth: 0.670
+  sensorOffsetX: 0.1    # not having effect
+  sensorOffsetY: 0      # not having effect
+
+  maxSpeed: 1.0 #0.4
+  maxAccel: 3.0 #0.5
+
+  direction_weight: 0.16    # 0.08 #0.02        # weight to change in direction
+  direction_threshold: 120      # in degrees
