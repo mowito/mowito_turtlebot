@@ -58,4 +58,4 @@ maxUrange: 3 #5.0
 # The maximum range of the sensor. If regions with no obstacles within the range of the sensor should appear as free space in the map, set maxUrange < maximum range of the real sensor <= maxRange 
 maxRange: 8 #10.0
 
-minimumScore: 50 #0
+minimumScore: 150 #50 #0
