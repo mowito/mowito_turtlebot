@@ -1,0 +1,61 @@
+
+# error in rotation as a function of rotation 0.1
+# srr: 0.8 
+srr: 1.2
+# error in translation as a function of rotation 0.2
+# srt: 0.02 
+srt: 0.02
+# str: 0.01 
+str: 0.8
+stt: 0.01
+
+# Processing parameters (resolution of the map)  
+# delta: 0.02 
+delta: 0.05
+
+llsamplerange: 0.01
+llsamplestep: 0.01
+lasamplerange: 0.005
+lasamplestep: 0.005
+
+sigma: 0.05
+kernelSize: 1
+lstep: 0.05
+astep: 0.05
+iterations: 5
+lsigma: 0.075
+ogain: 3.0
+
+# Initial map size  
+xmin: -10
+xmax: 10
+ymin: -10
+ymax: 10
+
+# Process a scan each time the robot translates this far  
+linearUpdate: 0.1
+
+# Process a scan each time the robot rotates this far  
+angularUpdate: 0.05
+
+temporalUpdate: -1.0
+
+resampleThreshold: 0.5
+
+# Number of particles in the filter. default 30        
+# particles: 10 
+particles: 30
+
+# Process 1 out of every this many scans (set it to a higher number to skip more scans)  
+throttle_scans: 1
+
+# Number of beams to skip in each scan. 
+lskip: 0
+
+# The maximum usable range of the laser. A beam is cropped to this value.  
+maxUrange: 3 #5.0
+
+# The maximum range of the sensor. If regions with no obstacles within the range of the sensor should appear as free space in the map, set maxUrange < maximum range of the real sensor <= maxRange 
+maxRange: 8 #10.0
+
+minimumScore: 50 #0
