@@ -51,8 +51,7 @@
     	<remap from="imu_in" to="/imu" />
     	<remap from="imu_out" to="/flat_imu" />
     </node>
-  </group>  
-
+  </group>
   <!-- mowito nav server -->
   <include file="$(find mowito_turtlebot)/launch/secondary_launch/start_nav_server.launch">
       <arg name="mission_executive_config" value="$(find mowito_turtlebot)/config/mission_executive_config/mission_executive_params.yaml"/>
