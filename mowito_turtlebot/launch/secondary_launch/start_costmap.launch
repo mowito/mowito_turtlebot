@@ -1,6 +1,6 @@
 <launch>
     <arg name="respawn" default="true"/>
-    <node name="costmap" pkg="costmap_2d" type="costmap_2d_node" output="screen" respawn="$(arg respawn)">
+    <node name="costmap" pkg="mw_costmap" type="costmap_2d_node" output="screen" respawn="$(arg respawn)">
     	<rosparam file="$(find mowito_turtlebot)/config/costmap_config/costmap_common_params.yaml" command="load" ns="local_costmap"/>
     	<rosparam file="$(find mowito_turtlebot)/config/costmap_config/local_costmap_params.yaml" command="load"/>
         <rosparam file="$(find mowito_turtlebot)/config/costmap_config/costmap_common_params.yaml" command="load" ns="global_costmap"/>

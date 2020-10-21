@@ -12,9 +12,9 @@ global_costmap:
   rolling_window: true
   resolution: 0.025
   plugins:
-            - {name: static,                  type: "costmap_2d::StaticLayer"}
-            - {name: obstacle_layer,         type: "costmap_2d::VoxelLayer"}
-            - {name: inflation_layer,               type: "costmap_2d::InflationLayer"}
+            - {name: static,                  type: "mw_costmap::StaticLayer"}
+            - {name: obstacle_layer,         type: "mw_costmap::VoxelLayer"}
+            - {name: inflation_layer,               type: "mw_costmap::InflationLayer"}
   inflation_layer:
     cost_scaling_factor: 3.0
     inflation_radius: 0.3
