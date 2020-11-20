@@ -3,7 +3,7 @@ mw_maxl_planner:
   odomTopic: "/odom"
   plot_path: true
 
-  pathFolder: $(find mw_maxl_planner)/paths
+  pathFolder: $(find mw_maxl_planner)/paths/rosbot_mprim_05_02
   autonomyMode: true
   map_frame: "map"
   robot_frame: "base_link"
