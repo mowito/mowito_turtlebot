@@ -4,6 +4,7 @@ mw_maxl_planner:
   plot_path: true
 
   pathFolder: $(find mw_maxl_planner)/paths/rosbot_mprim_05_02
+  pathFile: "/paths"
   autonomyMode: true
   map_frame: "map"
   robot_frame: "base_link"
@@ -31,3 +32,26 @@ mw_maxl_planner:
 
   direction_weight: 0.16    # 0.08 #0.02        # weight to change in direction
   direction_threshold: 120      # in degrees
+
+  #high accuracy multiplier for reaching the goal. Takes a value between (0, 1]
+  high_accuracy_multiplier: 0.4
+  #scoring params
+  in_place_rotation_penalty: 0.05 #higher value penalises in place rotation more
+  goal_direction_preference: 0.2 #higher value means controller prefers paths oriented towards the goal
+  # for obstacle inflation
+  x_inflate: 0.0 # +- x_inflate /2 meters in x-direction of path frame
+  y_inflate: 0.0 #+- y_inflate / 2 meters in y-direction of path frame
+  # enable visualisation of detailed data (pointcloud data)
+  vis_pointcloud: true
+  # the obstacle horizon - used for cropping the pointcloud
+  # it should be more than the length of the first part of the motion primitives
+  # adjacent range should be more than min path range
+  obstacle_horizon: 0.7 
+  min_path_range: 0.3
+  # scales the paths and distances. low pathScale means path elongation and vice-versa.
+  # for particular local goal, pathScale starts with initial value, finds a ptha, 
+  # then value of path scale is decreased find a longer solution path. till it hits th minPathScale.
+  initial_path_scale: 1.0
+  min_path_scale: 0.75
+  path_scale_step: 0.25
+  use_odom_velocity: false
