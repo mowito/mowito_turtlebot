@@ -13,10 +13,6 @@ base_frame: base_link
 scan_topic: /scan
 mode: localization #localization
 
-    # if you'd like to start localizing on bringup in a map and pose
-map_file_name: turtle
-map_start_pose: [-1.85303472591, -0.614965263423, 0.0]
-
 debug_logging: false
 throttle_scans: 1
 transform_publish_period: 0.02 #if 0 never publishes odometry
