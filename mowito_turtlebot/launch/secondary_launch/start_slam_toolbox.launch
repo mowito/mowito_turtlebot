@@ -1,0 +1,19 @@
+<launch>
+    <arg name="localization" default="false"/>
+    <arg name="map_file_name" default="slam_map"/>
+    <arg name="map_start_pose" default="[-1.85303472591, -0.614965263423, 0.0]"/>
+
+    <group unless="$(arg localization)">
+    <node pkg="slam_toolbox" type="async_slam_toolbox_node" name="slam_toolbox" output="screen">
+        <rosparam command="load" file="$(find mowito_turtlebot)/config/slam_toolbox_config/slam_toolbox_mapping.yaml" />
+    </node>
+    </group>
+
+    <group if="$(arg localization)">
+    <node pkg="slam_toolbox" type="localization_slam_toolbox_node" name="slam_toolbox" output="screen">
+        <param name="map_file_name" value ="$(find mowito_turtlebot)/maps/$(arg map_file_name)"/>
+        <rosparam param="map_start_pose" subst_value="True">$(arg map_start_pose)</rosparam>
+        <rosparam command="load" file="$(find mowito_turtlebot)/config/slam_toolbox_config/slam_toolbox_localization.yaml"/>
+    </node>
+    </group>
+</launch>

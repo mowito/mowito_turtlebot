@@ -1,0 +1,10 @@
+odom_frame_id: odom
+base_frame_id: base_link
+global_frame_id: map
+update_min_distance: 0.01
+update_min_angle: 0.02
+odom_noise_rot_rot: 0.05
+odom_noise_rot_trans: 0.05
+odom_noise_trans_trans: 0.05
+odom_noise_trans_rot: 0.05
+
